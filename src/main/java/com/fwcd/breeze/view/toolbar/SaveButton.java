@@ -6,7 +6,7 @@ import javax.swing.JFileChooser;
 
 import com.fwcd.palm.editor.PalmEditor;
 
-public class SaveButton extends BToolBarButton {
+public class SaveButton extends IconButton {
 	private final JFileChooser fileChooser;
 	private final PalmEditor editor;
 

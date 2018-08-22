@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
-import com.fwcd.breeze.view.toolbar.BTitleBar;
+import com.fwcd.breeze.view.toolbar.BreezeTitleBar;
 import com.fwcd.fructose.swing.ResourceImage;
 import com.fwcd.palm.languages.Java;
 import com.fwcd.palm.theme.DarkTheme;
@@ -25,7 +25,7 @@ public class BreezeFrame {
 
 		if (!nativeLook) {
 			view.setUndecorated(true);
-			view.add(new BTitleBar(view).getView(), BorderLayout.NORTH);
+			view.add(new BreezeTitleBar(view).getView(), BorderLayout.NORTH);
 		}
 
 		view.setVisible(true);

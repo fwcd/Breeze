@@ -14,12 +14,12 @@ import com.fwcd.palm.editor.PalmEditor;
 import com.fwcd.palm.theme.Theme;
 import com.fwcd.palm.theme.ThemedElement;
 
-public class BToolBar implements Viewable {
+public class BreezeToolBar implements Viewable {
 	private final JToolBar view;
 	private final JFileChooser fc = new JFileChooser(); // TODO: Use NativeFileChooser instead?
 	private final int padding = 2;
 
-	public BToolBar(BreezeComponent parent) {
+	public BreezeToolBar(BreezeComponent parent) {
 		view = new JToolBar();
 		view.setBorder(new EmptyBorder(0, 0, 0, 0));
 		view.setMargin(new Insets(padding, padding, padding, padding));

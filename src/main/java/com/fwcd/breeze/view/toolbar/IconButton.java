@@ -6,15 +6,15 @@ import javax.swing.JButton;
 import com.fwcd.fructose.swing.ResourceImage;
 import com.fwcd.fructose.swing.TransparentButton;
 
-public class BToolBarButton {
+public class IconButton {
 	private final JButton view;
 	
-	public BToolBarButton(String resourceURL, Runnable onClick) {
+	public IconButton(String resourceURL, Runnable onClick) {
 		this(resourceURL);
 		addClickListener(onClick);
 	}
 	
-	public BToolBarButton(String resourceURL) {
+	public IconButton(String resourceURL) {
 		Icon icon = new ResourceImage(resourceURL).getAsIcon();
 		view = new TransparentButton(icon);
 	}

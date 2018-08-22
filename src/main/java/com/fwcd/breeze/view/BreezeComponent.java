@@ -9,7 +9,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import com.fwcd.breeze.view.toolbar.BToolBar;
+import com.fwcd.breeze.view.toolbar.BreezeToolBar;
 import com.fwcd.fructose.exception.Rethrow;
 import com.fwcd.fructose.swing.Viewable;
 import com.fwcd.palm.config.PalmConfigured;
@@ -22,7 +22,7 @@ public class BreezeComponent implements Viewable, PalmConfigured {
 	private Theme theme;
 	private ProgrammingLang language;
 
-	private final BToolBar toolBar;
+	private final BreezeToolBar toolBar;
 	private final PalmEditor editor;
 
 	public BreezeComponent(Theme theme, ProgrammingLang language) {
@@ -42,7 +42,7 @@ public class BreezeComponent implements Viewable, PalmConfigured {
 		editor = new PalmEditor(this);
 		view.add(editor.getView(), BorderLayout.CENTER);
 
-		toolBar = new BToolBar(this);
+		toolBar = new BreezeToolBar(this);
 		view.add(toolBar.getView(), BorderLayout.NORTH);
 		SwingUtilities.invokeLater(editor::focus);
 	}
