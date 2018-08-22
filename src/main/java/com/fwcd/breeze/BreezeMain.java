@@ -3,7 +3,7 @@ package com.fwcd.breeze;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import com.fwcd.breeze.core.BreezeApp;
+import com.fwcd.breeze.core.BreezeFrame;
 
 public class BreezeMain {
 	public static void main(String[] args) {
@@ -11,6 +11,6 @@ public class BreezeMain {
 			UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 		} catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {}
 		
-		new BreezeApp("Breeze", 480, 640, true);
+		new BreezeFrame("Breeze", 480, 640, /* nativeLook */ true);
 	}
 }

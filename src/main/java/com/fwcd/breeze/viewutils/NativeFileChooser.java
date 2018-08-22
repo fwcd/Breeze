@@ -8,11 +8,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import com.fwcd.fructose.exception.Rethrow;
 
 /**
- * Hacky approach to obtain a "natively looking"
- * file chooser.
- * 
- * @author Fredrik
- *
+ * Obtain a "natively looking" file chooser.
  */
 public class NativeFileChooser {
 	private final JFileChooser chooser;

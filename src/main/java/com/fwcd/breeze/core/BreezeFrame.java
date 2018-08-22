@@ -9,11 +9,11 @@ import com.fwcd.fructose.swing.ResourceImage;
 import com.fwcd.palm.languages.Java;
 import com.fwcd.palm.theme.DarkTheme;
 
-public class BreezeApp {
+public class BreezeFrame {
 	private final JFrame view;
 	private final BreezeComponent component;
 
-	public BreezeApp(String title, int width, int height, boolean nativeLook) {
+	public BreezeFrame(String title, int width, int height, boolean nativeLook) {
 		view = new JFrame(title);
 		view.setSize(width, height);
 		view.setLayout(new BorderLayout());
