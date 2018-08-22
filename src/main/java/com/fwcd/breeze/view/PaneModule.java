@@ -1,4 +1,4 @@
-package com.fwcd.breeze.core;
+package com.fwcd.breeze.view;
 
 import com.fwcd.fructose.swing.Viewable;
 

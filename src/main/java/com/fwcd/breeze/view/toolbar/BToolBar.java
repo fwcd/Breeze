@@ -1,4 +1,4 @@
-package com.fwcd.breeze.toolbar;
+package com.fwcd.breeze.view.toolbar;
 
 import java.awt.Insets;
 
@@ -8,7 +8,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JToolBar;
 import javax.swing.border.EmptyBorder;
 
-import com.fwcd.breeze.core.BreezeComponent;
+import com.fwcd.breeze.view.BreezeComponent;
 import com.fwcd.fructose.swing.Viewable;
 import com.fwcd.palm.editor.PalmEditor;
 import com.fwcd.palm.theme.Theme;

@@ -1,4 +1,4 @@
-package com.fwcd.breeze.toolbar;
+package com.fwcd.breeze.view.toolbar;
 
 import javax.swing.Icon;
 import javax.swing.JButton;

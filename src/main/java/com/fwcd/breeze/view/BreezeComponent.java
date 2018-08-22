@@ -1,4 +1,4 @@
-package com.fwcd.breeze.core;
+package com.fwcd.breeze.view;
 
 import java.awt.BorderLayout;
 
@@ -9,7 +9,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import com.fwcd.breeze.toolbar.BToolBar;
+import com.fwcd.breeze.view.toolbar.BToolBar;
 import com.fwcd.fructose.exception.Rethrow;
 import com.fwcd.fructose.swing.Viewable;
 import com.fwcd.palm.config.PalmConfigured;

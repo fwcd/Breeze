@@ -1,10 +1,10 @@
-package com.fwcd.breeze.core;
+package com.fwcd.breeze.view;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
-import com.fwcd.breeze.toolbar.BTitleBar;
+import com.fwcd.breeze.view.toolbar.BTitleBar;
 import com.fwcd.fructose.swing.ResourceImage;
 import com.fwcd.palm.languages.Java;
 import com.fwcd.palm.theme.DarkTheme;

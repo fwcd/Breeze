@@ -1,4 +1,4 @@
-package com.fwcd.breeze.viewutils;
+package com.fwcd.breeze.view.utils;
 
 import javax.swing.JFileChooser;
 import javax.swing.LookAndFeel;

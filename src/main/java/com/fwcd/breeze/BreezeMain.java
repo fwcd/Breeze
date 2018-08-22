@@ -3,7 +3,7 @@ package com.fwcd.breeze;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import com.fwcd.breeze.core.BreezeFrame;
+import com.fwcd.breeze.view.BreezeFrame;
 
 public class BreezeMain {
 	public static void main(String[] args) {
