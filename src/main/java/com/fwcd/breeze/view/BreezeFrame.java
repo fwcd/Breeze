@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
+import com.fwcd.breeze.model.BreezeModel;
 import com.fwcd.breeze.view.toolbar.TitleBarView;
 import com.fwcd.fructose.swing.ResourceImage;
 
@@ -18,7 +19,7 @@ public class BreezeFrame {
 		view.setIconImage(new ResourceImage("/icons/iconLQ.png").get());
 		view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		breeze = new BreezeView();
+		breeze = new BreezeView(new BreezeModel());
 		view.add(breeze.getComponent(), BorderLayout.CENTER);
 
 		if (!nativeLook) {
