@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     implementation 'com.github.fwcd:Fructose:920c990cf65a69e2b13701912e2a5054ca6321ad'
+    implementation 'com.fifesoft:rsyntaxtextarea:2.6.1'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }

@@ -16,11 +16,11 @@ import com.fwcd.fructose.geometry.Vector2D;
 import com.fwcd.fructose.swing.MouseHandler;
 import com.fwcd.fructose.swing.View;
 
-public class BreezeTitleBar implements View {
+public class TitleBarView implements View {
 	private JComponent component;
 	private JButton closeButton;
 	
-	public BreezeTitleBar(JFrame frame) {
+	public TitleBarView(JFrame frame) {
 		component = new JPanel();
 		component.setBackground(Color.DARK_GRAY.darker());
 		component.setPreferredSize(new Dimension(20, 20));

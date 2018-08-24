@@ -4,13 +4,13 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 
-import com.fwcd.palm.editor.PalmEditor;
+import com.fwcd.breeze.model.EditorModel;
 
 public class OpenButton extends IconButton {
 	private final JFileChooser fileChooser;
-	private final PalmEditor editor;
+	private final EditorModel editor;
 
-	public OpenButton(String resourceURL, JFileChooser fileChooser, PalmEditor editor) {
+	public OpenButton(String resourceURL, JFileChooser fileChooser, EditorModel editor) {
 		super(resourceURL);
 		this.fileChooser = fileChooser;
 		this.editor = editor;
@@ -23,7 +23,7 @@ public class OpenButton extends IconButton {
 		File file = fileChooser.getSelectedFile();
 
 		if (option == JFileChooser.APPROVE_OPTION && file != null) {
-			editor.open(file);
+			editor.open(file.toPath());
 		}
 	}
 }

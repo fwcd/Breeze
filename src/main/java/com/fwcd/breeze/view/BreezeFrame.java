@@ -4,14 +4,12 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
-import com.fwcd.breeze.view.toolbar.BreezeTitleBar;
+import com.fwcd.breeze.view.toolbar.TitleBarView;
 import com.fwcd.fructose.swing.ResourceImage;
-import com.fwcd.palm.languages.Java;
-import com.fwcd.palm.theme.DarkTheme;
 
 public class BreezeFrame {
 	private final JFrame view;
-	private final BreezeComponent component;
+	private final BreezeView breeze;
 
 	public BreezeFrame(String title, int width, int height, boolean nativeLook) {
 		view = new JFrame(title);
@@ -20,12 +18,12 @@ public class BreezeFrame {
 		view.setIconImage(new ResourceImage("/icons/iconLQ.png").get());
 		view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		component = new BreezeComponent(new DarkTheme(), new Java());
-		view.add(component.getComponent(), BorderLayout.CENTER);
+		breeze = new BreezeView();
+		view.add(breeze.getComponent(), BorderLayout.CENTER);
 
 		if (!nativeLook) {
 			view.setUndecorated(true);
-			view.add(new BreezeTitleBar(view).getComponent(), BorderLayout.NORTH);
+			view.add(new TitleBarView(view).getComponent(), BorderLayout.NORTH);
 		}
 
 		view.setVisible(true);
