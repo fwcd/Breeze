@@ -5,13 +5,13 @@ plugins {
 
 mainClassName = 'com.fwcd.breeze.BreezeMain'
 
-dependencies {
-    // Include JAR-dependencies
-    implementation fileTree(dir: 'lib', include: ['*.jar'])
-    // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
-}
-
 repositories {
     jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.fwcd:Fructose:920c990cf65a69e2b13701912e2a5054ca6321ad'
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
 }
