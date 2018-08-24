@@ -6,25 +6,24 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.fwcd.fructose.structs.ObservableList;
+import com.fwcd.breeze.utils.TwoWay;
+import com.fwcd.fructose.Observable;
 
 public class EditorModel {
-	private final ObservableList<String> lines = new ObservableList<>();
+	private final TwoWay<Observable<String>> text = new TwoWay<>(() -> new Observable<>(""));
 	
-	public ObservableList<String> getLines() { return lines; }
+	public TwoWay<Observable<String>> getText() { return text; }
 	
 	public void open(Path file) {
 		try (BufferedReader reader = Files.newBufferedReader(file)) {
-			List<String> readLines = new ArrayList<>();
+			StringBuilder buffer = new StringBuilder();
 			String line = reader.readLine();
 			while (line != null) {
-				readLines.add(line);
+				buffer.append(line);
 				line = reader.readLine();
 			}
-			lines.set(readLines);
+			text.getRequested().set(buffer.toString());
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
 		}
@@ -32,10 +31,7 @@ public class EditorModel {
 	
 	public void save(Path file) {
 		try (BufferedWriter writer = Files.newBufferedWriter(file)) {
-			for (String line : lines.get()) {
-				writer.write(line);
-				writer.newLine();
-			}
+			writer.write(text.getActual().get());
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
 		}
