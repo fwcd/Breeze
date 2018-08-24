@@ -14,7 +14,7 @@ import com.fwcd.fructose.swing.View;
 
 public class ToolBarView implements View {
 	private final JToolBar component;
-	private final JFileChooser fc = new JFileChooser(); // TODO: Use NativeFileChooser instead?
+	private final JFileChooser fc = new JFileChooser();
 	private final int padding = 2;
 
 	public ToolBarView(BreezeView parent) {
