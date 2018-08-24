@@ -11,14 +11,14 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import com.fwcd.breeze.view.toolbar.BreezeToolBar;
 import com.fwcd.fructose.exception.Rethrow;
-import com.fwcd.fructose.swing.Viewable;
+import com.fwcd.fructose.swing.View;
 import com.fwcd.palm.config.PalmConfigured;
 import com.fwcd.palm.editor.PalmEditor;
 import com.fwcd.palm.languages.ProgrammingLang;
 import com.fwcd.palm.theme.Theme;
 
-public class BreezeComponent implements Viewable, PalmConfigured {
-	private final JPanel view;
+public class BreezeComponent implements View, PalmConfigured {
+	private final JPanel component;
 	private Theme theme;
 	private ProgrammingLang language;
 
@@ -35,15 +35,15 @@ public class BreezeComponent implements Viewable, PalmConfigured {
 			throw new Rethrow(e);
 		}
 
-		view = new JPanel();
-		view.setOpaque(false);
-		view.setLayout(new BorderLayout());
+		component = new JPanel();
+		component.setOpaque(false);
+		component.setLayout(new BorderLayout());
 
 		editor = new PalmEditor(this);
-		view.add(editor.getView(), BorderLayout.CENTER);
+		component.add(editor.getComponent(), BorderLayout.CENTER);
 
 		toolBar = new BreezeToolBar(this);
-		view.add(toolBar.getView(), BorderLayout.NORTH);
+		component.add(toolBar.getComponent(), BorderLayout.NORTH);
 		SwingUtilities.invokeLater(editor::focus);
 	}
 
@@ -66,7 +66,7 @@ public class BreezeComponent implements Viewable, PalmConfigured {
 	}
 
 	@Override
-	public JComponent getView() {
-		return view;
+	public JComponent getComponent() {
+		return component;
 	}
 }

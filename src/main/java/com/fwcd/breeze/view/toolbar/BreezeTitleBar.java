@@ -14,17 +14,17 @@ import javax.swing.JPanel;
 
 import com.fwcd.fructose.geometry.Vector2D;
 import com.fwcd.fructose.swing.MouseHandler;
-import com.fwcd.fructose.swing.Viewable;
+import com.fwcd.fructose.swing.View;
 
-public class BreezeTitleBar implements Viewable {
-	private JComponent view;
+public class BreezeTitleBar implements View {
+	private JComponent component;
 	private JButton closeButton;
 	
 	public BreezeTitleBar(JFrame frame) {
-		view = new JPanel();
-		view.setBackground(Color.DARK_GRAY.darker());
-		view.setPreferredSize(new Dimension(20, 20));
-		view.setLayout(new BorderLayout());
+		component = new JPanel();
+		component.setBackground(Color.DARK_GRAY.darker());
+		component.setPreferredSize(new Dimension(20, 20));
+		component.setLayout(new BorderLayout());
 		
 		JPanel windowButtons = new JPanel();
 		windowButtons.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
@@ -38,7 +38,7 @@ public class BreezeTitleBar implements Viewable {
 		closeButton.addActionListener(l -> System.exit(0));
 		windowButtons.add(closeButton);
 		
-		view.add(windowButtons, BorderLayout.EAST);
+		component.add(windowButtons, BorderLayout.EAST);
 		
 		MouseHandler mouseHandler = new MouseHandler() {
 			private Vector2D lastPos = null;
@@ -68,11 +68,11 @@ public class BreezeTitleBar implements Viewable {
 				lastPos = null;
 			}
 		};
-		mouseHandler.connect(view);
+		mouseHandler.connect(component);
 	}
 	
 	@Override
-	public JComponent getView() {
-		return view;
+	public JComponent getComponent() {
+		return component;
 	}
 }

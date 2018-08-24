@@ -21,11 +21,11 @@ public class BreezeFrame {
 		view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		component = new BreezeComponent(new DarkTheme(), new Java());
-		view.add(component.getView(), BorderLayout.CENTER);
+		view.add(component.getComponent(), BorderLayout.CENTER);
 
 		if (!nativeLook) {
 			view.setUndecorated(true);
-			view.add(new BreezeTitleBar(view).getView(), BorderLayout.NORTH);
+			view.add(new BreezeTitleBar(view).getComponent(), BorderLayout.NORTH);
 		}
 
 		view.setVisible(true);
