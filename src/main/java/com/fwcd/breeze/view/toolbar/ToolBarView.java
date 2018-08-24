@@ -24,9 +24,10 @@ public class ToolBarView implements View {
 		component.setFloatable(false);
 		component.setOpaque(true);
 		component.setBorderPainted(false);
-
-		// Theme theme = parent.getTheme();
-		// component.setBackground(theme.colorOf(ThemedElement.TOOLBAR).orElse(theme.bgColor()));
+		
+		parent.getTheme().listenAndFire(theme -> {
+			component.setBackground(theme.getToolBarBackground());
+		});
 
 		EditorModel editor = parent.getEditor().getModel();
 		

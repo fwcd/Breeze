@@ -38,6 +38,8 @@ public class BreezeView implements View {
 		toolBar.addButton(button);
 	}
 	
+	public Observable<BreezeTheme> getTheme() { return theme; }
+	
 	public EditorView getEditor() { return editor; }
 	
 	@Override

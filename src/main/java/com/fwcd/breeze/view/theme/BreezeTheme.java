@@ -8,7 +8,7 @@ import org.fife.ui.rsyntaxtextarea.Theme;
 public class BreezeTheme {
 	private Color background = Color.DARK_GRAY;
 	private Color foreground = Color.WHITE;
-	private Color lineHighlight = Color.LIGHT_GRAY;
+	private Color lineHighlight = Color.GRAY;
 	private Color toolBarBackground = Color.DARK_GRAY.brighter();
 	
 	public Color getForeground() { return foreground; }
@@ -31,6 +31,8 @@ public class BreezeTheme {
 		Theme rstaTheme = new Theme(textArea);
 		rstaTheme.bgColor = background;
 		rstaTheme.lineNumberColor = foreground;
+		rstaTheme.gutterBackgroundColor = background;
+		rstaTheme.gutterBorderColor = background;
 		rstaTheme.caretColor = foreground;
 		rstaTheme.currentLineHighlight = lineHighlight;
 		return rstaTheme;
