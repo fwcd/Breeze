@@ -4,7 +4,7 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 
-import com.fwcd.breeze.model.EditorModel;
+import com.fwcd.breeze.model.editor.EditorModel;
 
 public class OpenButton extends IconButton {
 	private final JFileChooser fileChooser;

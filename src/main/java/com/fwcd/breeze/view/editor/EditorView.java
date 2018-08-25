@@ -1,16 +1,23 @@
 package com.fwcd.breeze.view.editor;
 
+import java.util.Map;
+
 import javax.swing.JComponent;
 import javax.swing.event.DocumentEvent;
 
-import com.fwcd.breeze.model.EditorModel;
+import com.fwcd.breeze.model.editor.EditorModel;
+import com.fwcd.breeze.model.language.Language;
 import com.fwcd.breeze.utils.TwoWay;
+import com.fwcd.breeze.view.language.GrammarTokenMakerFactory;
 import com.fwcd.breeze.view.theme.BreezeTheme;
 import com.fwcd.fructose.Observable;
 import com.fwcd.fructose.swing.DocumentAdapter;
 import com.fwcd.fructose.swing.View;
 
+import org.fife.ui.rsyntaxtextarea.AbstractTokenMakerFactory;
+import org.fife.ui.rsyntaxtextarea.RSyntaxDocument;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import org.fife.ui.rsyntaxtextarea.TokenMakerFactory;
 import org.fife.ui.rtextarea.RTextScrollPane;
 
 public class EditorView implements View {
@@ -43,6 +50,13 @@ public class EditorView implements View {
 			
 			private void fireChange() { text.getActual().set(textArea.getText()); }
 		});
+		
+		textArea.setDocument(new RSyntaxDocument(new GrammarTokenMakerFactory(model.getLanguageManager().getLanguages()), "text/plain"));
+		model.getLanguage().listenAndFire(language -> {
+			textArea.setSyntaxEditingStyle(language.getKey());
+		});
+		
+		model.getLanguage().set(model.getLanguageManager().get("text/java")); // DEBUG: Set language initially to Java
 	}
 	
 	public EditorModel getModel() { return model; }

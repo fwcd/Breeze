@@ -8,7 +8,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JToolBar;
 import javax.swing.border.EmptyBorder;
 
-import com.fwcd.breeze.model.EditorModel;
+import com.fwcd.breeze.model.editor.EditorModel;
 import com.fwcd.breeze.view.BreezeView;
 import com.fwcd.fructose.swing.View;
 
