@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     implementation 'com.github.fwcd:Fructose:a6ebc3719c3d7a561377282079ee93492ecc95dc'
-    implementation 'com.github.fwcd:Palm:e254c99cd11af25e8ced672abdc83ad7717d625b'
+    implementation 'com.github.fwcd:Palm:4ac9fdd33728117533208a1704441ad456729f24'
     // TODO: Resolve TM4E temporarily through Jitpack until it is officially released to a public Maven repo
     implementation 'com.github.eclipse.tm4e:org.eclipse.tm4e.core:a07f83d53da9e281876c646f9ed08b04b8663bea'
     // Use JUnit test framework

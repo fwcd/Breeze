@@ -24,6 +24,7 @@ public class VSCDarkTheme extends TemplateTheme {
 		set(SyntaxElement.VARIABLE, Color.CYAN);
 		set(SyntaxElement.STRING, Color.ORANGE);
 		set(SyntaxElement.COMMENT, Color.GREEN);
+		set(SyntaxElement.FUNCTION, Color.YELLOW);
 		set(SyntaxElement.OTHER, Color.WHITE);
 		
 		// TODO: Functions, method invocations

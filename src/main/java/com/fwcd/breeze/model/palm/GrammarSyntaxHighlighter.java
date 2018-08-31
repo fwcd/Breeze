@@ -26,15 +26,15 @@ public class GrammarSyntaxHighlighter implements SyntaxHighlighter {
 	
 	private SyntaxElement toSyntaxElement(List<String> scopes) {
 		if (scopes.size() < 1) return SyntaxElement.OTHER;
-		String rawElement = scopes.get(scopes.size() - 1).split("\\.", 2)[0];
+		String scope = scopes.get(scopes.size() - 1);
 		
-		switch (rawElement) {
-			case "keyword": return SyntaxElement.KEYWORD;
-			case "entity": return SyntaxElement.TYPE;
-			case "storage": return SyntaxElement.TYPE;
-			case "variable": return SyntaxElement.VARIABLE;
-			case "comment": return SyntaxElement.COMMENT;
-			default: return SyntaxElement.OTHER;
-		}
+		if (scope.startsWith("keyword")) return SyntaxElement.KEYWORD;
+		if (scope.startsWith("entity.name.function")) return SyntaxElement.FUNCTION;
+		if (scope.startsWith("storage.type")) return SyntaxElement.TYPE;
+		if (scope.startsWith("variable")) return SyntaxElement.VARIABLE;
+		if (scope.startsWith("comment")) return SyntaxElement.COMMENT;
+		if (scope.startsWith("string")) return SyntaxElement.STRING;
+		
+		return SyntaxElement.OTHER;
 	}
 }
