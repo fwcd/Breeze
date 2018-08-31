@@ -1,10 +1,12 @@
 package com.fwcd.breeze.view.toolbar;
 
+import java.awt.BorderLayout;
 import java.awt.Insets;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFileChooser;
+import javax.swing.JPanel;
 import javax.swing.JToolBar;
 import javax.swing.border.EmptyBorder;
 
@@ -25,13 +27,22 @@ public class ToolBarView implements View {
 		component.setFloatable(false);
 		component.setOpaque(true);
 		component.setBorderPainted(false);
+		component.setLayout(new BorderLayout());
 		
 		theme.listenAndFire(it -> {
 			component.setBackground(it.bgColor());
 		});
 		
-		component.add(new SaveButton("/icons/saveIcon.png", fc, model.getEditor()).get());
-		component.add(new OpenButton("/icons/openIcon.png", fc, model.getEditor()).get());
+		JPanel left = new JPanel();
+		left.setOpaque(false);
+		left.add(new SaveButton("/icons/saveIcon.png", fc, model.getEditor()).get());
+		left.add(new OpenButton("/icons/openIcon.png", fc, model.getEditor()).get());
+		component.add(left, BorderLayout.WEST);
+		
+		JPanel right = new JPanel();
+		right.setOpaque(false);
+		right.add(new LanguagePickerView(model).getComponent());
+		component.add(right, BorderLayout.EAST);
 	}
 
 	public void addButton(String title, Runnable onClick) {

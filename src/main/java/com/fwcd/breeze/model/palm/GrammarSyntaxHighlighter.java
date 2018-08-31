@@ -30,7 +30,9 @@ public class GrammarSyntaxHighlighter implements SyntaxHighlighter {
 		
 		if (scope.startsWith("keyword")) return SyntaxElement.KEYWORD;
 		if (scope.startsWith("entity.name.function")) return SyntaxElement.FUNCTION;
+		if (scope.startsWith("entity.name.type")) return SyntaxElement.TYPE;
 		if (scope.startsWith("storage.type")) return SyntaxElement.TYPE;
+		if (scope.startsWith("storage.modifier")) return SyntaxElement.KEYWORD;
 		if (scope.startsWith("variable")) return SyntaxElement.VARIABLE;
 		if (scope.startsWith("comment")) return SyntaxElement.COMMENT;
 		if (scope.startsWith("string")) return SyntaxElement.STRING;

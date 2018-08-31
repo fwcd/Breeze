@@ -29,12 +29,28 @@ public class BreezeModel {
 	
 	private void registerDefaultLanguages() {
 		Registry tmRegistry = new Registry();
-		Language java = loadTextMateLanguage("text/java", "Java", "/languages/Java.tmLanguage.json", tmRegistry);
 		
-		languageManager.register(java);
-		
-		// DEBUG:
-		setLanguage("text/java");
+		registerLanguage("text/c", "C", "c.tmLanguage.json", tmRegistry);
+		registerLanguage("text/cpp", "C++", "cpp.tmLanguage.json", tmRegistry);
+		registerLanguage("text/c-sharp", "C#", "cSharp.tmLanguage.json", tmRegistry);
+		registerLanguage("text/css", "CSS", "css.tmLanguage.json", tmRegistry);
+		registerLanguage("text/go", "Go", "go.tmLanguage.json", tmRegistry);
+		registerLanguage("text/groovy", "Groovy", "groovy.tmLanguage.json", tmRegistry);
+		registerLanguage("text/html", "HTML", "html.tmLanguage.json", tmRegistry);
+		registerLanguage("text/java", "Java", "java.tmLanguage.json", tmRegistry);
+		registerLanguage("text/javascript", "JavaScript", "javaScript.tmLanguage.json", tmRegistry);
+		registerLanguage("text/json", "JSON", "json.tmLanguage.json", tmRegistry);
+		registerLanguage("text/lua", "Lua", "lua.tmLanguage.json", tmRegistry);
+		registerLanguage("text/markdown", "Markdown", "markdown.tmLanguage.json", tmRegistry);
+		registerLanguage("text/objective-c", "Objective-C", "objectiveC.tmLanguage.json", tmRegistry);
+		registerLanguage("text/python", "Python", "python.tmLanguage.json", tmRegistry);
+		registerLanguage("text/ruby", "Ruby", "ruby.tmLanguage.json", tmRegistry);
+		registerLanguage("text/swift", "Swift", "swift.tmLanguage.json", tmRegistry);
+		registerLanguage("text/xml", "XML", "xml.tmLanguage.json", tmRegistry);
+	}
+	
+	private void registerLanguage(String key, String name, String grammarFileName, Registry tmRegistry) {
+		languageManager.register(loadTextMateLanguage(key, name, "/languages/" + grammarFileName, tmRegistry));
 	}
 	
 	private Language loadTextMateLanguage(String key, String name, String resourcePath, Registry tmRegistry) {

@@ -1,5 +1,7 @@
 package com.fwcd.breeze.view.toolbar;
 
+import java.awt.Dimension;
+
 import javax.swing.Icon;
 import javax.swing.JButton;
 
@@ -7,7 +9,7 @@ import com.fwcd.fructose.swing.ResourceImage;
 import com.fwcd.fructose.swing.TransparentButton;
 
 public class IconButton {
-	private final JButton view;
+	private final JButton component;
 	
 	public IconButton(String resourceURL, Runnable onClick) {
 		this(resourceURL);
@@ -16,14 +18,15 @@ public class IconButton {
 	
 	public IconButton(String resourceURL) {
 		Icon icon = new ResourceImage(resourceURL).getAsIcon();
-		view = new TransparentButton(icon);
+		component = new TransparentButton(icon);
+		component.setPreferredSize(new Dimension(icon.getIconWidth(), icon.getIconHeight()));
 	}
 	
 	public void addClickListener(Runnable onClick) {
-		view.addActionListener(l -> onClick.run());
+		component.addActionListener(l -> onClick.run());
 	}
 	
 	public JButton get() {
-		return view;
+		return component;
 	}
 }
