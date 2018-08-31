@@ -8,12 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import com.fwcd.breeze.model.BreezeModel;
+import com.fwcd.breeze.view.theme.VSCDarkTheme;
 import com.fwcd.breeze.view.toolbar.ToolBarView;
 import com.fwcd.fructose.swing.View;
 import com.fwcd.palm.controller.editor.PalmEditorController;
 import com.fwcd.palm.model.editor.PalmEditorModel;
 import com.fwcd.palm.view.editor.PalmEditorView;
-import com.fwcd.palm.view.theme.DarkTheme;
 
 public class BreezeView implements View {
 	private final JPanel component;
@@ -30,7 +30,7 @@ public class BreezeView implements View {
 		editor = new PalmEditorView(editorModel);
 		new PalmEditorController(editor, editorModel);
 		
-		editor.getTheme().set(new DarkTheme());
+		editor.getTheme().set(new VSCDarkTheme());
 		component.add(editor.getComponent(), BorderLayout.CENTER);
 		
 		toolBar = new ToolBarView(model, editor.getTheme());
