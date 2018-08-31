@@ -8,15 +8,17 @@ import javax.swing.JFileChooser;
 import javax.swing.JToolBar;
 import javax.swing.border.EmptyBorder;
 
+import com.fwcd.breeze.model.BreezeModel;
+import com.fwcd.fructose.Observable;
 import com.fwcd.fructose.swing.View;
-import com.fwcd.palm.PalmEditor;
+import com.fwcd.palm.view.theme.Theme;
 
 public class ToolBarView implements View {
 	private final JToolBar component;
 	private final JFileChooser fc = new JFileChooser();
 	private final int padding = 2;
 
-	public ToolBarView(PalmEditor editor) {
+	public ToolBarView(BreezeModel model, Observable<Theme> theme) {
 		component = new JToolBar();
 		component.setBorder(new EmptyBorder(0, 0, 0, 0));
 		component.setMargin(new Insets(padding, padding, padding, padding));
@@ -24,12 +26,12 @@ public class ToolBarView implements View {
 		component.setOpaque(true);
 		component.setBorderPainted(false);
 		
-		editor.getView().getTheme().listenAndFire(theme -> {
-			component.setBackground(theme.bgColor());
+		theme.listenAndFire(it -> {
+			component.setBackground(it.bgColor());
 		});
 		
-		component.add(new SaveButton("/icons/saveIcon.png", fc, editor.getModel()).get());
-		component.add(new OpenButton("/icons/openIcon.png", fc, editor.getModel()).get());
+		component.add(new SaveButton("/icons/saveIcon.png", fc, model.getEditor()).get());
+		component.add(new OpenButton("/icons/openIcon.png", fc, model.getEditor()).get());
 	}
 
 	public void addButton(String title, Runnable onClick) {
