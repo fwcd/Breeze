@@ -1,9 +1,7 @@
 package com.fwcd.breeze.model.language.textmate;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 import com.fwcd.breeze.model.language.Grammar;
 import com.fwcd.breeze.model.language.Token;

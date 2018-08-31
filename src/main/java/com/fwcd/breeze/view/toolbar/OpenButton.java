@@ -4,13 +4,13 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 
-import com.fwcd.breeze.model.editor.EditorModel;
+import com.fwcd.palm.model.editor.PalmEditorModel;
 
 public class OpenButton extends IconButton {
 	private final JFileChooser fileChooser;
-	private final EditorModel editor;
+	private final PalmEditorModel editor;
 
-	public OpenButton(String resourceURL, JFileChooser fileChooser, EditorModel editor) {
+	public OpenButton(String resourceURL, JFileChooser fileChooser, PalmEditorModel editor) {
 		super(resourceURL);
 		this.fileChooser = fileChooser;
 		this.editor = editor;

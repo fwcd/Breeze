@@ -1,10 +1,11 @@
-package com.fwcd.breeze.view;
+package com.fwcd.breeze;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
 import com.fwcd.breeze.model.BreezeModel;
+import com.fwcd.breeze.view.BreezeView;
 import com.fwcd.breeze.view.toolbar.TitleBarView;
 import com.fwcd.fructose.swing.ResourceImage;
 
