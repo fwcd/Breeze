@@ -28,6 +28,7 @@ public class BreezeView implements View {
 		
 		PalmEditorModel editorModel = model.getEditor();
 		editor = new PalmEditorView(editorModel);
+		editor.setFontSize(13);
 		new PalmEditorController(editor, editorModel);
 		
 		editor.getTheme().set(new VSCDarkTheme());

@@ -17,7 +17,7 @@ public class BreezeFrame {
 		view = new JFrame(title);
 		view.setSize(width, height);
 		view.setLayout(new BorderLayout());
-		view.setIconImage(new ResourceImage("/icons/iconLQ.png").get());
+		view.setIconImage(new ResourceImage("/icons/icon32.png").get());
 		view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		breeze = new BreezeView(new BreezeModel());

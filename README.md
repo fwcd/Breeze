@@ -1,7 +1,9 @@
 # Breeze
 A minimalistic, lightweight source code editor.
 
-![Screenshot](https://github.com/fwcd/Breeze/blob/master/screenshot.png?raw=true)
+![Icon](assets/icon128.png)
+
+![Screenshot](screenshot.png)
 
 ## Building
 `./gradlew build`
