@@ -14,9 +14,9 @@ import javax.swing.JPanel;
 
 import fwcd.fructose.geometry.Vector2D;
 import fwcd.fructose.swing.MouseHandler;
-import fwcd.fructose.swing.View;
+import fwcd.fructose.swing.Viewable;
 
-public class TitleBarView implements View {
+public class TitleBarView implements Viewable {
 	private JComponent component;
 	private JButton closeButton;
 	

@@ -4,9 +4,9 @@ import javax.swing.JComboBox;
 import javax.swing.JComponent;
 
 import fwcd.breeze.model.BreezeModel;
-import fwcd.fructose.swing.View;
+import fwcd.fructose.swing.Viewable;
 
-public class LanguagePickerView implements View {
+public class LanguagePickerView implements Viewable {
 	private final JComboBox<String> component;
 	private final LanguagePickerModel model;
 	

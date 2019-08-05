@@ -10,12 +10,12 @@ import javax.swing.SwingUtilities;
 import fwcd.breeze.model.BreezeModel;
 import fwcd.breeze.view.theme.VSCDarkTheme;
 import fwcd.breeze.view.toolbar.ToolBarView;
-import fwcd.fructose.swing.View;
+import fwcd.fructose.swing.Viewable;
 import fwcd.palm.controller.editor.PalmEditorController;
 import fwcd.palm.model.editor.PalmEditorModel;
 import fwcd.palm.view.editor.PalmEditorView;
 
-public class BreezeView implements View {
+public class BreezeView implements Viewable {
 	private final JPanel component;
 
 	private final ToolBarView toolBar;

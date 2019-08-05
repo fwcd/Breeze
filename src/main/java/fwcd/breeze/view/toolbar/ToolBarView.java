@@ -12,10 +12,10 @@ import javax.swing.border.EmptyBorder;
 
 import fwcd.breeze.model.BreezeModel;
 import fwcd.fructose.Observable;
-import fwcd.fructose.swing.View;
+import fwcd.fructose.swing.Viewable;
 import fwcd.palm.view.theme.Theme;
 
-public class ToolBarView implements View {
+public class ToolBarView implements Viewable {
 	private final JToolBar component;
 	private final JFileChooser fc = new JFileChooser();
 	private final int padding = 2;
